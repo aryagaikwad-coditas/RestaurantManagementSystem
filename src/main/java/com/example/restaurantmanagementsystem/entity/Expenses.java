@@ -7,13 +7,13 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="staff_assignment")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "expenses")
 @Builder
-public class StaffAssignment {
+public class Expenses {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +23,10 @@ public class StaffAssignment {
     @JoinColumn(name = "branch_id")
     private RestaurantBranch branch;
 
-    @Column(precision = 10, nullable = false)
-    private BigDecimal salary;
+    private BigDecimal amount;
 
-    @Column(name="joining_date", nullable = false)
-    private LocalDateTime joining_date;
+    private LocalDateTime expense_date;
 
-    @OneToOne
-    @JoinColumn(name = "user_id", nullable = false,unique = true)
-    private Users user;
+    @Column(columnDefinition = "TEXT")
+    private String title;
 }

@@ -1,5 +1,10 @@
 package com.example.restaurantmanagementsystem.enums;
 
 public enum OrderStatus {
-    PREPARING,
+    PENDING,
+    PREPARED,
+    READY,
+    SERVED,
+    BILLED
+
 }

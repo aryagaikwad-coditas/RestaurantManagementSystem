@@ -21,7 +21,7 @@ public class RestaurantTable {
     @JoinColumn(name = "branch_id",nullable = false)
     private RestaurantBranch branch;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "assigned_waiter_id",nullable = false)
     private Users assignedWaiter;
 
